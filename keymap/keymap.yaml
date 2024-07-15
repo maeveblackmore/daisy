@@ -16,3 +16,8 @@ layers:
     - ['@', '*', '!', '?', '-', '~', '`', shift, cmd, ctrl, alt, '^']
     - ['|', '/', '$', '#', '_', '&']
     - [nav, space, e, {t: sym, type: held}]
+combos:
+  - {p: [13, 14], k: esc, l: [aptmak]}
+  - {p: [17, 18], k: esc, l: [aptmak]}
+  - {p: [12, 13], k: q, l: [aptmak]}
+  - {p: [18, 19], k: z, l: [aptmak]}
