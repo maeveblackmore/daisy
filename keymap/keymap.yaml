@@ -11,3 +11,8 @@ layers:
     - [pgup, alt, ctrl, cmd, shift, del, '`', left, down, up, right, pgdn]
     - [enter, bspc, home, end, dword, tab]
     - [{t: nav, type: held}, space, e, sym]
+  sym:
+    - ['%', '[', '(', '{', '<', '>', '}', ')', ']', '\']
+    - ['@', '*', '!', '?', '-', '~', '`', shift, cmd, ctrl, alt, '^']
+    - ['|', '/', '$', '#', '_', '&']
+    - [nav, space, e, {t: sym, type: held}]
