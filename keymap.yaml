@@ -1,8 +1,13 @@
 layout:
   cols_thumbs_notation: 123332+2 2+233321
 layers:
-  def:
-    - [v, w, f, p, b, j, l, u, y, "'"]
+  aptmak:
+    - [v, w, f, p, b, j, l, u, y, {t: "'", s: '"'}]
     - [shift, r, s, t, h, k, x, n, a, i, o, shift]
-    - [c, g, d, m, ",", .]
-    - ["", space, e, ""]
+    - [c, g, d, m, {t: ',', s: ';'}, {t: ., s: ':'}]
+    - [nav, space, e, sym]
+  nav:
+    - [1, 2, 3, 4, 5, 6, 7, 8, 9, 0]
+    - [pgup, alt, ctrl, cmd, shift, del, '`', left, down, up, right, pgdn]
+    - [enter, bspc, home, end, dword, tab]
+    - [{t: nav, type: held}, space, e, sym]
