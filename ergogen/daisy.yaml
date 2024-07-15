@@ -2,4 +2,37 @@ meta:
   engine: 4.1.0
   author: Maeve Blackmore
   keyboard: Daisy
+  version: 0.1
   repository: https://github.com/maeveblackmore/daisy
+units:
+  pinky_splay: 5
+  pinky_offset: -8
+  ring_splay: 3
+  ring_offset: -8
+points:
+  zones.matrix:
+    rotate: pinky_splay + ring_splay
+    rows:
+      bottom:
+      home:
+      top:
+    columns:
+      outer:
+        rows:
+          top.skip: true
+          bottom.skip: true
+      pinky:
+        rows.top.skip: true
+      ring.key:
+        stagger: 1/3cy
+        splay: -pinky_splay
+        origin: [0, pinky_offset]
+      middle.key:
+        stagger: 0.25cy
+        splay: -ring_splay
+        origin: [0, ring_offset]
+      index.key:
+        stagger: -0.25cy
+      inner:
+        key.stagger: -0.5cy
+        rows.bottom.skip: true
