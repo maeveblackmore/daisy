@@ -1,0 +1,8 @@
+layout:
+  cols_thumbs_notation: 123332+2 2+233321
+layers:
+  def:
+    - [v, w, f, p, b, j, l, u, y, "'"]
+    - [shift, r, s, t, h, k, x, n, a, i, o, shift]
+    - [c, g, d, m, ",", .]
+    - ["", space, e, ""]
