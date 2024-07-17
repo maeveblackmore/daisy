@@ -5,13 +5,25 @@ meta:
   version: 0.1
   repository: https://github.com/maeveblackmore/daisy
 units:
+  keycap_x: 17.5
+  keycap_y: 16.5
+  spacing_x: 18.5
+  spacing_y: 17.5
   pinky_splay: 5
   pinky_offset: -8
   ring_splay: 3
   ring_offset: -8
+  thumb_offset_x: 3
+  thumb_offset_y: -20
+  keycap_border_radius: 1
 points:
   zones.matrix:
     rotate: pinky_splay + ring_splay
+    key:
+      width: keycap_x
+      height: keycap_y
+      spread: spacing_x
+      padding: spacing_y
     rows:
       bottom:
       home:
@@ -24,15 +36,34 @@ points:
       pinky:
         rows.top.skip: true
       ring.key:
-        stagger: 1/3cy
+        stagger: 1/3keycap_y
         splay: -pinky_splay
         origin: [0, pinky_offset]
       middle.key:
-        stagger: 0.25cy
+        stagger: 0.25keycap_y
         splay: -ring_splay
         origin: [0, ring_offset]
       index.key:
-        stagger: -0.25cy
+        stagger: -0.25keycap_y
       inner:
-        key.stagger: -0.5cy
+        key.stagger: -0.5keycap_y
         rows.bottom.skip: true
+  zones.thumbs:
+    anchor:
+      ref: matrix_index_bottom
+      shift: [thumb_offset_x, thumb_offset_y - thumb_offset_x]
+    key.$extends: points.zones.matrix.key
+    columns:
+      reachy:
+      tucky.key.stagger: 1/3keycap_y
+outlines:
+  _keycaps:
+    - what: rectangle
+      where:
+        - /matrix_.*/
+        - /thumbs_.*/
+      size: [keycap_x, keycap_y]
+      corner: keycap_border_radius
+      bound: false
+  daisy:
+    - ^_keycaps
